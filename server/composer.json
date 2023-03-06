@@ -1,0 +1,14 @@
+{
+  "name": "scandiweb/php-crud",
+  "authors": [
+    {
+      "name": "Bekzod Tukhtasinov"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": ""
+    }
+  },
+  "require": {}
+}
