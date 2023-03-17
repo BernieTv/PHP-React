@@ -41,13 +41,13 @@ class Dvd extends Product
         $numberPart = str_replace($search, '', $data['properties']);
 
         if (isset($data['properties']) && is_numeric($numberPart)) {
-            return TRUE;
+            return true;
         } else {
             echo 'Please, enter a numeric value for the size.';
-            return FALSE;
+            return false;
         }
 
         echo 'Please, enter the value corresponding to the product type.';
-        return FALSE;
+        return false;
     }
 }

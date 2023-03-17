@@ -1,4 +1,4 @@
-import React, { SetStateAction, useReducer, useState } from 'react';
+import React, { useReducer } from 'react';
 
 interface Props {
   children: React.ReactNode;
@@ -8,14 +8,10 @@ export const ItemsContext = React.createContext<{
   items: string[];
   addItem: (id: string) => void;
   removeItem: (id: string) => void;
-  setAllSku: (value: SetStateAction<string[]>) => void;
-  allSku: string[];
 }>({
   items: [],
   addItem: (_: string) => {},
   removeItem: (_: string) => {},
-  setAllSku: () => [],
-  allSku: [],
 });
 
 const defaultItemsState: {
@@ -52,7 +48,6 @@ const ItemsProvider: React.FC<Props> = (props) => {
     ItemsReducer,
     defaultItemsState
   );
-  const [allSku, setAllSku] = useState<string[]>([]);
 
   const addItemToItemsHandler = (id: string) => {
     dispatchItemsAction({ type: 'ADD', id });
@@ -66,8 +61,6 @@ const ItemsProvider: React.FC<Props> = (props) => {
     items: itemsState.items,
     addItem: addItemToItemsHandler,
     removeItem: removeItemFromItemsHandler,
-    setAllSku,
-    allSku,
   };
 
   return (

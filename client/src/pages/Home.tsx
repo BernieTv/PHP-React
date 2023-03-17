@@ -3,13 +3,13 @@ import { useEffect, useState } from 'react';
 import { Card } from '../components';
 import { PRODUCTS_API_URL } from '../utils/constants';
 
-type TPosts = Record<
+export type TCardsContent = Record<
   'id' | 'sku' | 'name' | 'category' | 'properties',
   string
 > & { price: number };
 
 const Home = () => {
-  const [allItems, setAllItems] = useState<TPosts[]>([]);
+  const [allItems, setAllItems] = useState<TCardsContent[]>([]);
 
   const fetchItems = async () => {
     try {

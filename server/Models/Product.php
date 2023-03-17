@@ -62,12 +62,12 @@ abstract class Product
     {
         if (empty($this->sku) || empty($this->name) || empty($this->price)) {
             echo 'Please, fill up the required fields';
-            return FALSE;
+            return false;
         } else if (!preg_match('/^([A-Za-z0-9]+)$/', $this->sku) || !preg_match('/^([A-Za-z0-9 ]+)$/', $this->name) || !is_numeric($this->price)) {
             echo 'Please, verify your data';
-            return FALSE;
+            return false;
         }
 
-        return TRUE;
+        return true;
     }
 }

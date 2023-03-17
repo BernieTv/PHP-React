@@ -36,6 +36,7 @@ class MyController
     {
         $productType = ucfirst(strtolower(filter_var($this->getData('category'), FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
         $className = 'App\\Models\\' . $productType;
+
         if (!file_exists('../Models/' . $productType . '.php')) {
             echo 'Product type not recognized.';
             return;
@@ -61,7 +62,7 @@ class MyController
         if ($value === '') {
             return $json;
         } else if (!$json[$value]) {
-            return NULL;
+            return null;
         }
 
         return $json[$value];

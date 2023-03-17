@@ -1,16 +1,9 @@
 import { memo, useContext } from 'react';
+
 import { ItemsContext } from '../context/ContextProvider';
+import { TCardsContent } from '../pages/Home';
 
-export type TCardProps = {
-  id: string;
-  sku: string;
-  price: number;
-  name: string;
-  properties: string;
-  category: string;
-};
-
-const Card: React.FC<TCardProps> = memo(
+const Card: React.FC<TCardsContent> = memo(
   ({ name, price, sku, properties, id, category }) => {
     const { addItem, removeItem, items } = useContext(ItemsContext);
 

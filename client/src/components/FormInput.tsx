@@ -115,7 +115,7 @@ const FormInput: React.FC<IFormInputProps> = ({
           errorMessage === '' ? 'success' : ''
         }`}
         onChange={handleChange}
-        type='text'
+        type={name === 'price' ? 'number' : 'text'}
         placeholder={`${toCapitalized(name)}`}
         required
         name={name}

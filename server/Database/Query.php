@@ -35,7 +35,7 @@ class Query extends Connection
             $query = $this->getDb()->prepare($sql);
             $query->execute([$sku]);
 
-            return empty($query->fetch()) ? FALSE : TRUE;
+            return empty($query->fetch()) ? false : true;
         } catch (PDOException $exception) {
             echo "Server error: " . $exception->getMessage();
         }

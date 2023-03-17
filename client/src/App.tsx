@@ -1,7 +1,7 @@
 import { useContext, useRef } from 'react';
 import { Link, Routes, Route, useMatch } from 'react-router-dom';
-import { ItemsContext } from './context/ContextProvider';
 
+import { ItemsContext } from './context/ContextProvider';
 import { AddItem, Home } from './pages';
 import { PRODUCTS_API_URL } from './utils/constants';
 

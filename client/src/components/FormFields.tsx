@@ -23,7 +23,7 @@ const defaultFormFields: IFormFields = {
   length: '',
 };
 
-const topics = ['DVD', 'Book', 'Furniture'];
+const categories = ['DVD', 'Book', 'Furniture'];
 
 const FormFields = forwardRef((_, ref) => {
   const [formFields, setFormFields] = useState(defaultFormFields);
@@ -193,7 +193,7 @@ const FormFields = forwardRef((_, ref) => {
           Type Switcher
         </option>
 
-        {topics.map((name) => (
+        {categories.map((name) => (
           <option key={name} className='select-options' value={name}>
             {name}
           </option>
